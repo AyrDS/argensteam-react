@@ -22,7 +22,18 @@ html {
     background-color: black;
 }
 
-.nav a{
+.nav > *{
     color: white;
-    padding-right: 20px;
+}
+
+.links{
+    margin-right: 20px;
+}
+
+.cart{
+    font-size: 25px;
+}
+
+h2{
+    text-align: center;
 }

@@ -4,9 +4,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 // 3) Tener un elemento de React
-import App from "./app";
-
-import "./CSS/estilos.css";
-
+import App from "./app"
+import "./CSS/estilos.css"
 // 4) Tener una funcion render corriendo
 ReactDOM.render(<App/>, document.querySelector("#root"));
