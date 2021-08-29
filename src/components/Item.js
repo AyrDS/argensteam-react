@@ -1,5 +1,3 @@
-
-
 const Item = ({ producto, precio }) => {
 
     return (

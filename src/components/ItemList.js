@@ -1,25 +1,7 @@
-import { useEffect, useState } from "react";
-import productosDB from "../db/productos";
 import Item from "./Item";
 
-const ItemList = () => {
-    const promProductos = () => {
-        return new Promise(resolve => {
+const ItemList = ({ productos }) => {
 
-            setTimeout(() => {
-                resolve(productosDB);
-            }, 2000);
-
-        });
-    };
-
-    const [productos, setProductos] = useState([])
-
-    useEffect(() => {
-        promProductos().then(data => {
-            setProductos(data);
-        })
-    }, [])
 
     return (
         <>
