@@ -1,11 +1,13 @@
-// import ItemCount from './ItemCount';
+/*import ItemCount from './ItemCount';
 import { useEffect, useState } from "react";
 import productosDB from "../db/productos";
-import ItemList from './ItemList';
+import ItemList from './ItemList'; */
+
+import ItemDetailContainer from "./ItemDetailContainer"
 
 const ItemListContainer = () => {
-    
-    const promProductos = () => {
+
+    /* const promProductos = () => {
         return new Promise(resolve => {
 
             setTimeout(() => {
@@ -21,17 +23,13 @@ const ItemListContainer = () => {
         promProductos().then(data => {
             setProductos(data);
         })
-    }, [])
+    }, []) */
 
     return (
         <>
-            <ItemList productos={productos} />
+            {/* <ItemList productos={productos} /> */}
 
-            {/* <ItemCount
-                stock={5}
-                onAdd={(cantidad) => { console.log(`Cantidad elegidad: ${cantidad}`) }}
-                initial={1}
-            /> */}
+            <ItemDetailContainer />
         </>
     );
 }
