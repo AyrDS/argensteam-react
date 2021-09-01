@@ -1,15 +1,16 @@
-const ItemDetail = ({ gifs }) => {
-    console.log(gifs)
+const ItemDetail = ({title, url}) => {
     return (
         <>
-
-
-            <div>
-                {/* <img src={url} alt={title} />
-                <h1>{title}</h1> */}
-            </div>
-
-
+            {
+                title === undefined  ? (
+                    <h1>Cargando...</h1>
+                ) : (
+                    <div>
+                        <img src={url} alt={title} />
+                        <h1>{title}</h1>
+                    </div>
+                )
+            }
         </>
     );
 }
