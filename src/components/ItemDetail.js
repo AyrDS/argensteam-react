@@ -2,7 +2,7 @@ const ItemDetail = ({title, url}) => {
     return (
         <>
             {
-                title === undefined  ? (
+                title === undefined ? (
                     <h1>Cargando...</h1>
                 ) : (
                     <div>
