@@ -1,62 +1,24 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 
-const url = `https://api.giphy.com/v1/gifs/search?q=food&limit=5&api_key=SB4aP8H6wOnuPFzk9FzLp08XKcLdsCTS`;
-
+const URL_API = "https://mocki.io/v1/51e03849-78e7-4289-9bd6-9f6d3351a900";
+const id = 2;
 const ItemDetailContainer = () => {
 
-    /* const getItems = async () => {
-        const respuesta = await fetch(url);
-        const { data } = await respuesta.json();
-
-        const gifs = data.map(gif => {
-            const { id, title, images: { downsized_medium: { url } } } = gif;
-
-            return {
-                id,
-                title,
-                url
-            }
-        });
-
-        return gifs;
-    } */
-    const [gifs, setGifs] = useState([])
-
-    const getItems = () => {
-        return new Promise(resolve => {
-
-            setTimeout(() => {
-                resolve(
-                    fetch(url)
-                        .then(respuesta => respuesta.json())
-                )
-            }, 2000);
-        })
-    }
+    const [productos, setProductos] = useState([])
 
     useEffect(() => {
-        getItems().then(({data}) => {
-            const gif = data.map(gif => {
-                const {title, images: { downsized_medium: { url } } } = gif;
-
-                return {
-                    title,
-                    url
-                }
+        fetch(URL_API)
+            .then(respuesta => respuesta.json())
+            .then(data => {
+                const aux = data.find(element => element.id === id);
+                setProductos(aux);
             })
-
-            setGifs(gif);
-        })
-    }, []);
-
-    const [title, urlGif] = gifs;
-
-    console.log(title, urlGif)
+    }, [])
 
     return (
         <>
-            <ItemDetail title={title} url={urlGif} />
+            <ItemDetail data={productos} />
         </>
     );
 }

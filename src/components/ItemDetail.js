@@ -1,17 +1,10 @@
-const ItemDetail = ({title, url}) => {
+const ItemDetail = ({ data }) => {
     return (
         <>
-            {
-                title === undefined ? (
-                    <h1>Cargando...</h1>
-                ) : (
-                    <div>
-                        <img src={url} alt={title} />
-                        <h1>{title}</h1>
-                    </div>
-                )
-            }
-        </>
+            <h1 key={data.id}>{data.producto}</h1>
+            <h2>Marca: {data.marca}</h2>
+            <h3>${data.precio}</h3>
+        </>    
     );
 }
 
