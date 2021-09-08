@@ -1,0 +1,14 @@
+html, body{
+    background-color: black;
+    color: white;
+}
+
+.iconNav{
+    width: 35px;
+    height: 45px;
+}
+
+.cart{
+    color: white;
+    font-size: 25px;
+}

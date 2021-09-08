@@ -1,35 +1,30 @@
-/*import ItemCount from './ItemCount';
-import { useEffect, useState } from "react";
-import productosDB from "../db/productos";
-import ItemList from './ItemList'; */
-
-import ItemDetailContainer from "./ItemDetailContainer"
+import { useState, useEffect } from "react";
+import { useParams } from "react-router";
+import ItemList from "./ItemList";
 
 const ItemListContainer = () => {
 
-    /* const promProductos = () => {
-        return new Promise(resolve => {
+    const [products, setProducts] = useState([]);
 
-            setTimeout(() => {
-                resolve(productosDB);
-            }, 2000);
+    const { id } = useParams();
 
-        });
-    };
-
-    const [productos, setProductos] = useState([])
+    const getProducts = async () => {
+        const url = "https://mocki.io/v1/e1aa8e62-c006-43f3-83c2-01c7b3990b85";
+        const result = await fetch(url);
+        const data = await result.json();
+        setProducts(data);
+    }
 
     useEffect(() => {
-        promProductos().then(data => {
-            setProductos(data);
-        })
-    }, []) */
-
+        if (!id) {
+            getProducts();
+        }
+    }, [id])
     return (
         <>
-            {/* <ItemList productos={productos} /> */}
+            <ItemList products={products} />
 
-            <ItemDetailContainer />
+            {/* <ItemDetailContainer /> */}
         </>
     );
 }

@@ -1,19 +1,19 @@
 import Item from "./Item";
 
-const ItemList = ({ productos }) => {
+const ItemList = ({ products }) => {
 
     return (
         <>
             {
-                productos.length === 0 ? (
+                products.length === 0 ? (
                     <h1>Cargando...</h1>
                 ) : (
-                    <div className="card-grid">
+                    <div>
                         {
-                            productos.map(producto => (
+                            products.map(p => (
                                 <Item
-                                    key={producto.id}
-                                    {...producto}
+                                    key={p.id}
+                                    {...p}
                                 />
                             ))
                         }

@@ -1,0 +1,61 @@
+[{
+    "id": "joystick",
+    "product": "Joystick PS4",
+    "price": 10000,
+    "desc": "Joystick de PS4 original sin usar",
+    "category": "hardware"
+}, {
+    "id": "gtav",
+    "product": "GTA V",
+    "price": 10000,
+    "desc": "Un joven estafador callejero, un ladrón de bancos retirado y un psicópata aterrador se meten en problemas, y tendrán que llevar a cabo una serie de peligrosos golpes para sobrevivir en una ciudad en la que no pueden confiar en nadie, y mucho menos los unos en los otros.",
+    "category": "game"
+}, {
+    "id": "teclado",
+    "product": "Teclado G915 TKL Logitech",
+    "price": 20000,
+    "desc": "G915 TKL es una nueva clase de teclado mecánico inalámbrico para gaming con tres opciones de interruptores GL de perfil bajo y tecnología inalámbrica LIGHTSPEED profesional de 1 ms. Es capaz de ofrecer 40 horas de gaming ininterrumpido con una carga completa. Completamente personalizable por tecla, además la tecnología RGB LIGHTSYNC reacciona a la acción del juego, el audio y el color de la pantalla como tú elijas. – El formato compacto sin teclado numérico deja más espacio para el movimiento del ratón. Con un diseño elegante, imposiblemente fino pero duradero y robusto, el G915 TKL eleva a los jugadores a una nueva dimensión de juego. La rueda de volumen y las teclas multimedia específicas te ofrecen un control rápido y sencillo del vídeo, el audio y el streaming.",
+    "category": "hardware"
+}, {
+    "id": "fifa21",
+    "product": "FIFA 21",
+    "price": 3000,
+    "desc": "Disfruta de las nuevas formas de jugar al modo más popular de FIFA a medida que creas el equipo de tus sueños con jugadores históricos y actuales en FIFA 21 Ultimate Team.",
+    "category": "game"
+}, {
+    "id": "ps5",
+    "product": "PlayStation 5",
+    "price": 100000,
+    "desc": "Experimenta una carga a velocidad sorprendente, una inmersión más profunda con soporte para respuesta hápitica, gatillos adaptativos y audio 3D, ademas de una generación nueva de juegos de PlayStation®5.",
+    "category": "hardware"
+}, {
+    "id": "cyberpunk",
+    "product": "CyberPunk 2077",
+    "price": 2000,
+    "desc": "Cyberpunk 2077 es una historia de acción y aventura en mundo abierto ambientada en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación corporal. Tu personaje es V, un mercenario que persigue un implante único que permite alcanzar la inmortalidad. Podrás personalizar las mejoras cibernéticas, las habilidades y el estilo de juego del personaje para dar forma a un mundo y a una historia que depende de tus decisiones.",
+    "category": "game"
+}, {
+    "id": "xboxx",
+    "product": "Xbox Series X",
+    "price": 90000,
+    "desc": "La Xbox Series X ofrece velocidades de cuadro sensacionalmente suaves de hasta 120 FPS con la explosión visual que ofrece HDR. Sumérgete con personajes más nítidos, mundos más brillantes y detalles imposibles con auténtico 4K",
+    "category": "hardware"
+}, {
+    "id": "cod",
+    "product": "Call Of Duty: Black Ops Cold War",
+    "price": 4000,
+    "desc": "Call of Duty: Black Ops Cold War es un nueva entrega de la saga de acción bélica first person shooter a cargo de Treyarch junto a Raven y Activision para PC, PlayStation 4, Xbox One, PlayStation 5 y Xbox Series X que nos lleva a la convulsa época de la Guerra Fría. Como operador de élite, seguirás los pasos de una misteriosa figura llamada Perseus, cuya misión es desestabilizar el equilibrio de poder mundial y cambiar el curso de la historia",
+    "category": "game"
+}, {
+    "id": "mouse",
+    "product": "Mouse Logitech G203",
+    "price": 2500,
+    "desc": "El mouse de juego te ofrecerá la posibilidad de marcar la diferencia y sacar ventajas en tus partidas. Su conectividad y sensor suave ayudará a que te desplaces rápido por la pantalla",
+    "category": "hardware"
+}, {
+    "id": "horizon",
+    "product": "Horizon Zero Dawn",
+    "price": 2000,
+    "desc": "Conviértete en la habilidosa cazadora Aloy y explora un mundo exuberante habitado por misteriosas criaturas mecanizadas, en un nuevo y emocionante juego de rol, acción y mundo abierto",
+    "category": "game"
+}]
