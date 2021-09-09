@@ -6,9 +6,9 @@ const ItemList = ({ products }) => {
         <>
             {
                 products.length === 0 ? (
-                    <h1>Cargando...</h1>
+                    <h1>Espere por favor...</h1>
                 ) : (
-                    <div>
+                    <>
                         {
                             products.map(p => (
                                 <Item
@@ -17,7 +17,7 @@ const ItemList = ({ products }) => {
                                 />
                             ))
                         }
-                    </div>
+                    </>
                 )
             }
         </>

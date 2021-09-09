@@ -1,14 +1,50 @@
-html, body{
+html,
+body {
     background-color: black;
     color: white;
 }
 
-.iconNav{
+a {
+    text-decoration: none;
+}
+
+.iconNav {
     width: 35px;
     height: 45px;
 }
 
-.cart{
+.cart {
     color: white;
     font-size: 25px;
+}
+
+.cardCustom {
+    min-height: 250px;
+}
+
+.imgProduct {
+    max-width: 150px;
+    padding: 10px 0;
+}
+
+.customDetail {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+}
+
+.customDetail img {
+    width: 250px;
+    height: auto;
+}
+
+.main {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+footer{
+    text-align: center;
+    font-size: 14px;
 }

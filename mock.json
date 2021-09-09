@@ -2,14 +2,14 @@
     "id": "joystick",
     "product": "Joystick PS4",
     "price": 10000,
-    "desc": "Joystick de PS4 original sin usar",
+    "desc": "Joystick inalámbrico DUALSHOCK®4 Black. Chat con micrófono/parlante integrado, Almohadilla táctil de 2 puntos, Vibración del teléfono mejorada",
     "category": "hardware"
 }, {
     "id": "gtav",
     "product": "GTA V",
-    "price": 10000,
+    "price": 1000,
     "desc": "Un joven estafador callejero, un ladrón de bancos retirado y un psicópata aterrador se meten en problemas, y tendrán que llevar a cabo una serie de peligrosos golpes para sobrevivir en una ciudad en la que no pueden confiar en nadie, y mucho menos los unos en los otros.",
-    "category": "game"
+    "category": "games"
 }, {
     "id": "teclado",
     "product": "Teclado G915 TKL Logitech",
@@ -21,7 +21,7 @@
     "product": "FIFA 21",
     "price": 3000,
     "desc": "Disfruta de las nuevas formas de jugar al modo más popular de FIFA a medida que creas el equipo de tus sueños con jugadores históricos y actuales en FIFA 21 Ultimate Team.",
-    "category": "game"
+    "category": "games"
 }, {
     "id": "ps5",
     "product": "PlayStation 5",
@@ -33,7 +33,7 @@
     "product": "CyberPunk 2077",
     "price": 2000,
     "desc": "Cyberpunk 2077 es una historia de acción y aventura en mundo abierto ambientada en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación corporal. Tu personaje es V, un mercenario que persigue un implante único que permite alcanzar la inmortalidad. Podrás personalizar las mejoras cibernéticas, las habilidades y el estilo de juego del personaje para dar forma a un mundo y a una historia que depende de tus decisiones.",
-    "category": "game"
+    "category": "games"
 }, {
     "id": "xboxx",
     "product": "Xbox Series X",
@@ -45,7 +45,7 @@
     "product": "Call Of Duty: Black Ops Cold War",
     "price": 4000,
     "desc": "Call of Duty: Black Ops Cold War es un nueva entrega de la saga de acción bélica first person shooter a cargo de Treyarch junto a Raven y Activision para PC, PlayStation 4, Xbox One, PlayStation 5 y Xbox Series X que nos lleva a la convulsa época de la Guerra Fría. Como operador de élite, seguirás los pasos de una misteriosa figura llamada Perseus, cuya misión es desestabilizar el equilibrio de poder mundial y cambiar el curso de la historia",
-    "category": "game"
+    "category": "games"
 }, {
     "id": "mouse",
     "product": "Mouse Logitech G203",
@@ -57,5 +57,5 @@
     "product": "Horizon Zero Dawn",
     "price": 2000,
     "desc": "Conviértete en la habilidosa cazadora Aloy y explora un mundo exuberante habitado por misteriosas criaturas mecanizadas, en un nuevo y emocionante juego de rol, acción y mundo abierto",
-    "category": "game"
+    "category": "games"
 }]
