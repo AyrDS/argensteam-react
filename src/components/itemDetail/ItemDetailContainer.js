@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import getProducts from "../helpers/fetch";
+import getProducts from "../../helpers/fetch";
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
