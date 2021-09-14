@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Item = ({ product, id }) => {
 
     return (
-        <div className="col mt-3">
+        <div className="col mt-3 animate__animated animate__fadeIn">
             <div className="card cardCustom text-dark">
                 <img
                     src={`/../../assets/img/${id}.png`}

@@ -1,32 +1,17 @@
-import { useState } from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
-const ItemCount = ({ stock, onAdd, initial }) => {
-
-    const [contador, setContador] = useState(initial);
-
-    const sumar = () => {
-        if (contador < stock) {
-            setContador(contador + 1);
-        }
-    }
-    const restar = () => {
-        if (contador > 1) {
-            setContador(contador - 1);
-        }
-    }
-    const agregar = () => {
-        if(stock > 0){
-            onAdd(contador);
-        }
-    }
+const ItemCount = ({ onAdd, onSubtract, quantity }) => {
 
     return (
-        <div>
-            <p>Contador: {contador}</p>
-            <button onClick={sumar} >+</button>
-            <button onClick={restar} >-</button>
-            <button onClick={agregar} >Agregar al carrito</button>
-        </div>
+        <>
+            <button className="btn btn-primary me-3" onClick={onAdd}> Agregar al carro <FontAwesomeIcon icon={faCartPlus} /> </button>
+            <button className="btn btn-danger" onClick={onSubtract}> Eliminar del carro <FontAwesomeIcon icon={faTrashAlt} /> </button>
+            {
+                quantity > 0 && <p className="mt-3 mb-0 fw-bold">Cantidad elegida: <span className="fw-normal">{quantity}</span></p>
+            }
+        </>
     );
 }
 
