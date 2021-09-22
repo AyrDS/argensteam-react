@@ -16,6 +16,21 @@ a {
 .cart {
     color: white;
     font-size: 25px;
+    padding: 0;
+}
+
+.cartNoti {
+    position: relative;
+}
+
+.cartNoti span {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    bottom: 15px;
+    left: 15px;
+    background-color: red;
 }
 
 .cardCustom {
@@ -44,7 +59,7 @@ a {
     grid-template-rows: auto 1fr auto;
 }
 
-footer{
+footer {
     text-align: center;
     font-size: 14px;
 }

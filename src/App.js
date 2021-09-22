@@ -5,6 +5,7 @@ import ItemDetailContainer from "./components/itemDetail/ItemDetailContainer";
 import Footer from "./components/ui/Footer";
 import NavBar from "./components/ui/Navbar";
 import { CustomProvider } from "./context/CartContext";
+import Cart from "./components/Cart";
 
 const App = () => {
     return (
@@ -14,8 +15,9 @@ const App = () => {
                     <NavBar />
                     <Switch>
                         <Route exact path="/" component={ItemListContainer} />
-                        <Route path="/category/:categoryId" component={ItemListContainer} />
-                        <Route path="/item/:id" component={ItemDetailContainer} />
+                        <Route exact path="/category/:categoryId" component={ItemListContainer} />
+                        <Route exact path="/item/:id" component={ItemDetailContainer} />
+                        <Route exact path="/cart" component={Cart} />
                     </Switch>
                     <Footer />
                 </CustomProvider>

@@ -23,13 +23,33 @@ export const CustomProvider = ({ children }) => {
         } else {
             setCart([...cart, item]);
         }
+    };
 
+    const showTotal = () => {
+        let total = 0;
+        cart.forEach(p => {
+            total += p.quantity * p.price;
+        });
+
+        return total;
     };
 
     const removeItem = id => {
-        const newCart = cart.filter(item => item.id !== id);
+        const newCart = cart.filter(product => {
+            if (product.id === id) {
+                if (product.quantity > 1) {
+                    product.quantity--;
+                    return product;
+                } else {
+                    return product = null;
+                }
+            } else {
+                return product;
+            }
+        });
+
         setCart(newCart);
-    };
+    }
 
     const clear = () => setCart([]);
 
@@ -39,6 +59,7 @@ export const CustomProvider = ({ children }) => {
         cart,
         addItem,
         removeItem,
+        showTotal,
         clear
     }
 
