@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import getProducts from "../../helpers/fetch";
+import { collection, getDocs } from "@firebase/firestore"
+import { db } from '../../firebase/firebaseConfig'
+
 import ItemList from "./ItemList";
 
 const ItemListContainer = () => {
@@ -10,7 +12,7 @@ const ItemListContainer = () => {
     const { categoryId } = useParams();
 
     useEffect(() => {
-        if (!categoryId) {
+        /* if (!categoryId) {
             getProducts()
                 .then(product => {
                     setProducts(product)
@@ -20,6 +22,22 @@ const ItemListContainer = () => {
                 .then(product => {
                     const aux = product.filter(p => p.category === categoryId);
                     setProducts(aux);
+                })
+        } */
+
+        if (!categoryId) {
+            const querySnapshot = getDocs(collection(db, "products"))
+            querySnapshot
+                .then(snap => {
+                    const data = [];
+                    snap.forEach(product => {
+                        data.push({
+                            id: product.id,
+                            ...product.data()
+                        });
+                    })
+
+                    setProducts(data);
                 })
         }
     }, [categoryId])
@@ -32,6 +50,7 @@ const ItemListContainer = () => {
 
                 <ItemList products={products} />
             </div>
+
         </main>
     );
 }
