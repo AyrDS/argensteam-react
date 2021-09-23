@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { getOneProduct } from "../../helpers/functions";
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
@@ -7,14 +8,12 @@ const ItemDetailContainer = () => {
     const [item, setitem] = useState([]);
     const { id } = useParams();
 
-    /* useEffect(() => {
-        getProducts()
-            .then(product => {
-                const aux = product.find(p => p.id === id)
-
-                setitem(aux);
+    useEffect(() => {
+        getOneProduct(id)
+            .then(data => {
+                setitem(data);
             });
-    }, [id]) */
+    }, [id])
 
     return (
         <main className="container mt-5">
