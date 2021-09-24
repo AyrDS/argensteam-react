@@ -3,9 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import { context } from "../../context/CartContext";
+import { context } from "../../context/Context";
 import { addOrder } from "../../helpers/functions";
 import { useForm } from "../../hooks/useForm";
+import validator from 'validator';
 
 const Cart = () => {
 
@@ -32,26 +33,45 @@ const Cart = () => {
         cart,
         user
     }
-    
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        setDisabled(true);
 
-        Swal.fire({
-            title: "Confirmando orden...",
-            text: "Por favor espere...",
-            allowOutsideClick: false,
-            showConfirmButton: false,
-            willOpen: () => {
-                Swal.showLoading();
-            }
-        });
+        if (isValid()) {
+            Swal.fire({
+                title: "Confirmando orden...",
+                text: "Por favor espere...",
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                willOpen: () => {
+                    Swal.showLoading();
+                }
+            });
 
-        addOrder(order).then(data => {
-            setOrderId(data)
-            Swal.close();
-        });
+            addOrder(order).then(data => {
+                setOrderId(data)
+                Swal.close();
+            });
+        };
+    };
 
+    const isValid = () => {
+        if (name.length === 0) {
+            Swal.fire("Error", "El nombre es obligatorio", "error");
+            return false;
+        };
+
+        if (!validator.isEmail(email)) {
+            Swal.fire("Error", "El email tiene que ser válido", "error");
+            return false;
+        };
+
+        if (phone.length < 8 || phone.length > 10) {
+            Swal.fire("Error", "El número de teléfono debe ser válido", "error");
+            return false;
+        };
+
+        return true;
     }
 
     if (cart.length === 0) {
