@@ -5,7 +5,8 @@ import ItemDetailContainer from "./components/itemDetail/ItemDetailContainer";
 import Footer from "./components/ui/Footer";
 import NavBar from "./components/ui/Navbar";
 import { CustomProvider } from "./context/CartContext";
-import Cart from "./components/Cart";
+import Cart from "./components/cart/Cart";
+
 
 const App = () => {
     return (

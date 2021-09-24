@@ -1,3 +1,4 @@
+import Loading from "../ui/Loading";
 import Item from "./Item";
 
 const ItemList = ({ products }) => {
@@ -5,7 +6,7 @@ const ItemList = ({ products }) => {
         <>
             {
                 products.length === 0 ? (
-                    <h1>Espere por favor...</h1>
+                    <Loading />
                 ) : (
                     <>
                         {

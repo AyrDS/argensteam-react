@@ -13,12 +13,20 @@ const ItemDetailContainer = () => {
             .then(data => {
                 setitem(data);
             });
-    }, [id])
+    }, [id]);
+
+    if (!item) {
+        return (
+            <main className="container text-center mt-5 d-flex flex-column justify-content-center align-items-center" style={{ height: "75vh" }}>
+                <img src="../../assets/img/error.png" alt="error" className="imgError" />
+                <h1>Producto no encontrado</h1>
+            </main>
+        )
+    };
 
     return (
         <main className="container mt-5">
-
-            {<ItemDetail item={item} />}
+            <ItemDetail item={item} />
         </main>
     );
 }

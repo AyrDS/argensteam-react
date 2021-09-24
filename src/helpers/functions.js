@@ -1,4 +1,4 @@
-import { collection, doc, getDoc, getDocs, query, where } from "@firebase/firestore"
+import { addDoc, collection, doc, getDoc, getDocs, query, where } from "@firebase/firestore"
 import { db } from "../firebase/firebaseConfig"
 
 export const getAllProducts = async () => {
@@ -29,13 +29,22 @@ export const getProductsById = async id => {
     return data;
 };
 
-export const getOneProduct = async id => {
-    const docRef = doc(db, "products", id);
+export const getOneProduct = async productId => {
+    const docRef = doc(db, "products", productId);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-        return docSnap.data();
+        return {
+            id: docSnap.id,
+            ...docSnap.data()
+        };
     } else {
         console.log("Error producto no encontrado");
     }
 };
+
+export const addOrder = async (order) => {
+    const docRef = await addDoc(collection(db, "orders"), order)
+
+    return docRef.id;
+}

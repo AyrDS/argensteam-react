@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { context } from "../../context/CartContext";
 import ItemCount from "../ItemCount";
+import Loading from "../ui/Loading";
 
 
 const ItemDetail = ({ item }) => {
@@ -14,6 +15,12 @@ const ItemDetail = ({ item }) => {
         addItem(newItem, quantity);
     };
 
+    if (item.length === 0) {
+        return (
+            <Loading />
+        )
+    };
+    
     return (
         <div className="customDetail p-4 row row-cols-1 row-cols-md-2 m-1 m-sm-0">
             <div className="col col-lg-3">
