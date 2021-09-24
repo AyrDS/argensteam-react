@@ -2,77 +2,14 @@ import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
 import { context } from "../../context/Context";
-import { addOrder } from "../../helpers/functions";
-import { useForm } from "../../hooks/useForm";
-import validator from 'validator';
+import CartForm from "./CartForm";
 
 const Cart = () => {
 
     const [orderId, setOrderId] = useState("");
-    const [disabled, setDisabled] = useState(false);
     const { cart, showTotal, removeItem } = useContext(context);
     const total = showTotal();
-
-    const [formValues, handleInputChange] = useForm({
-        name: "",
-        email: "",
-        phone: "",
-    });
-
-    const { name, email, phone } = formValues;
-
-    const user = {
-        name,
-        email,
-        phone
-    }
-
-    const order = {
-        cart,
-        user
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        if (isValid()) {
-            Swal.fire({
-                title: "Confirmando orden...",
-                text: "Por favor espere...",
-                allowOutsideClick: false,
-                showConfirmButton: false,
-                willOpen: () => {
-                    Swal.showLoading();
-                }
-            });
-
-            addOrder(order).then(data => {
-                setOrderId(data)
-                Swal.close();
-            });
-        };
-    };
-
-    const isValid = () => {
-        if (name.length === 0) {
-            Swal.fire("Error", "El nombre es obligatorio", "error");
-            return false;
-        };
-
-        if (!validator.isEmail(email)) {
-            Swal.fire("Error", "El email tiene que ser válido", "error");
-            return false;
-        };
-
-        if (phone.length < 8 || phone.length > 10) {
-            Swal.fire("Error", "El número de teléfono debe ser válido", "error");
-            return false;
-        };
-
-        return true;
-    }
 
     if (cart.length === 0) {
         return (
@@ -100,7 +37,7 @@ const Cart = () => {
                                             <h3>{productName}</h3>
                                             <p>Precio por unidad: ${price}</p>
                                             <p>Cantidad: {quantity}</p>
-                                            <button className="btn btn-danger float-md-end" onClick={() => removeItem(id)} disabled={disabled} >
+                                            <button className="btn btn-danger float-md-end" onClick={() => removeItem(id)} >
                                                 <FontAwesomeIcon icon={faTrashAlt} />
                                             </button>
                                         </div>
@@ -114,29 +51,7 @@ const Cart = () => {
 
                 <div className="col">
                     <h1 className="text-center mb-3">Complete sus datos</h1>
-                    <form onSubmit={handleSubmit}>
-                        <div className="row mb-3">
-                            <label htmlFor="name" className="col-lg-3 text-lg-end col-form-label">Nombre y apellido</label>
-                            <div className="col-lg-9">
-                                <input type="text" className="form-control" id="name" name="name" onChange={handleInputChange} value={name} />
-                            </div>
-                        </div>
-
-                        <div className="row mb-3">
-                            <label htmlFor="email" className="col-lg-3 text-lg-end col-form-label">Email</label>
-                            <div className="col-lg-9">
-                                <input type="email" className="form-control" id="email" name="email" onChange={handleInputChange} value={email} />
-                            </div>
-                        </div>
-
-                        <div className="row mb-3">
-                            <label htmlFor="phone" className="col-lg-3 text-lg-end col-form-label">Teléfono/Celular</label>
-                            <div className="col-lg-9">
-                                <input type="number" className="form-control" id="phone" name="phone" onChange={handleInputChange} value={phone} />
-                            </div>
-                        </div>
-                        <button className="float-end btn btn-primary" type="submit" disabled={disabled}>Finalizar compra</button>
-                    </form>
+                    <CartForm cart={cart} setOrderId={setOrderId} />
                 </div>
             </div>
 
