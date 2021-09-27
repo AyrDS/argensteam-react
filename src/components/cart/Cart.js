@@ -3,13 +3,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { context } from "../../context/Context";
+// import { getAuth } from 'firebase/auth';
 import CartForm from "./CartForm";
 
 const Cart = () => {
 
+    /* const auth = getAuth();
+    const user = auth.currentUser; */
+
     const [orderId, setOrderId] = useState("");
     const { cart, showTotal, removeItem } = useContext(context);
     const total = showTotal();
+
 
     if (cart.length === 0) {
         return (

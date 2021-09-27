@@ -60,7 +60,7 @@ export const CustomProvider = ({ children }) => {
         addItem,
         removeItem,
         showTotal,
-        clear
+        clear,
     }
 
     return (

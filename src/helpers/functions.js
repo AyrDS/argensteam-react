@@ -1,5 +1,5 @@
-import { addDoc, collection, doc, getDoc, getDocs, query, where } from "@firebase/firestore"
-import { db } from "../firebase/firebaseConfig"
+import { addDoc, collection, doc, getDoc, getDocs, query, setDoc, where } from "@firebase/firestore";
+import { db } from "../firebase/firebaseConfig";
 
 export const getAllProducts = async () => {
     const querySnapshot = await getDocs(collection(db, "products"));
@@ -47,4 +47,23 @@ export const addOrder = async (order) => {
     const docRef = await addDoc(collection(db, "orders"), order)
 
     return docRef.id;
-}
+};
+
+export const addUserDB = async (uid, name, email) => {
+
+    const userInfo = {
+        name,
+        email
+    }
+
+    await setDoc(doc(db, "users", uid), userInfo);
+};
+
+export const getUserName = async (uid) => {
+    const docRef = doc(db, "users", uid);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+        return docSnap.data().name;
+    }
+};
