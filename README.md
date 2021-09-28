@@ -12,5 +12,5 @@ Simulador de reserva de productos de Hardware o Videojuegos. El usuario para pod
 - Validator
 
 ## INSTALACIÓN
-- Clona el código: > git clone https://github.com/AyrDS/reactCoder.git
+- Clona el código: `> git clone https://github.com/AyrDS/reactCoder.git`
 - Corre la aplicación: > npm start
