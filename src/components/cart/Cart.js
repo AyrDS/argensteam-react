@@ -3,13 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { context } from "../../context/Context";
-// import { getAuth } from 'firebase/auth';
 import CartForm from "./CartForm";
 
-const Cart = () => {
-
-    /* const auth = getAuth();
-    const user = auth.currentUser; */
+const Cart = ({ history }) => {
 
     const [orderId, setOrderId] = useState("");
     const { cart, showTotal, removeItem } = useContext(context);
@@ -56,7 +52,7 @@ const Cart = () => {
 
                 <div className="col">
                     <h1 className="text-center mb-3">Complete sus datos</h1>
-                    <CartForm cart={cart} setOrderId={setOrderId} />
+                    <CartForm cart={cart} setOrderId={setOrderId} history={history} />
                 </div>
             </div>
 
@@ -64,7 +60,8 @@ const Cart = () => {
                 orderId &&
                 <div className="d-flex flex-column align-items-center justify-content-center mt-5 mb-5">
                     <img src="../../assets/img/success-.png" alt="success" className="successImg" />
-                    <h3 className="mt-3">¡Muchas gracias por su compra!</h3>
+                    <h3 className="mt-3">¡Muchas gracias por su reserva!</h3>
+                    <h5 className="mt-3">Recuerde que debe retirar la persona que figura en la orden.</h5>
                     <p>Su código de orden es {orderId}</p>
                 </div>
             }

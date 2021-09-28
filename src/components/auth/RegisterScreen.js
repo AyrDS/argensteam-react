@@ -54,7 +54,7 @@ const RegisterScreen = ({ history }) => {
     }
 
     return (
-        <main className="container d-flex flex-column justify-content-center align-items-center text-center">
+        <main className="container d-flex flex-column justify-content-center align-items-center text-center animate__animated animate__fadeIn">
             <div className="loginContainer">
                 <h2 className="mb-3">Regístrate</h2>
                 <form className="text-dark" onSubmit={handleRegister}>

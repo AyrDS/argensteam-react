@@ -43,8 +43,8 @@ export const getOneProduct = async productId => {
     }
 };
 
-export const addOrder = async (order) => {
-    const docRef = await addDoc(collection(db, "orders"), order)
+export const addOrder = async (order, uid) => {
+    const docRef = await addDoc(collection(db, `users/${uid}/orders`), order)
 
     return docRef.id;
 };
