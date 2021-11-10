@@ -16,4 +16,4 @@ Simulador de reserva de productos de Hardware o Videojuegos. El usuario para pod
 - Corre la aplicación: `> npm start`
 
 ### DEMO
-<img src="public/assets/img/ArgSteamGif.gif" />
+<img src="src/assets/img/ArgSteamGif.gif" />

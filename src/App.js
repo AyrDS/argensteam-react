@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect, HashRouter } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "@firebase/auth";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -45,7 +45,7 @@ const App = () => {
 
     return (
         <CustomProvider>
-            <Router>
+            <HashRouter>
                 <div className="main">
                     <NavBar />
                     <Switch>
@@ -55,10 +55,11 @@ const App = () => {
                         <Route exact path="/cart" component={Cart} />
                         <Route exact path="/user" component={User} />
                         <Route exact path="/user/register" component={RegisterScreen} />
+                        <Redirect to="/" />
                     </Switch>
                     <Footer />
                 </div>
-            </Router>
+            </HashRouter>
         </CustomProvider>
     )
 }

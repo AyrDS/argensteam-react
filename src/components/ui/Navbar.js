@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import CartWidget from "../cart/CartWidget";
+import logo from '../../assets/img/mate.png';
 
 const NavBar = () => {
     return (
@@ -9,7 +10,7 @@ const NavBar = () => {
             <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
                 <div className="container-fluid">
                     <Link className="navbar-brand fw-bold" to="/">
-                        <img src="/../../assets/img/mate.png" alt="Online shop Icon" className="iconNav" />
+                        <img src={logo} alt="Online shop Icon" className="iconNav" />
                         ArgenSteam
                     </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

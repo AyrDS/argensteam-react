@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { getOneProduct } from "../../helpers/functions";
 import ItemDetail from "./ItemDetail";
+import errorPng from '../../assets/img/error.png';
 
 const ItemDetailContainer = () => {
 
@@ -18,7 +19,7 @@ const ItemDetailContainer = () => {
     if (!item) {
         return (
             <main className="container text-center mt-5 d-flex flex-column justify-content-center align-items-center" style={{ height: "75vh" }}>
-                <img src="../../assets/img/error.png" alt="error" className="imgError" />
+                <img src={errorPng} alt="error" className="imgError" />
                 <h1>Producto no encontrado</h1>
             </main>
         )

@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { context } from "../../context/Context";
 import CartForm from "./CartForm";
+import success from '../../assets/img/success-.png';
 
 const Cart = ({ history }) => {
 
@@ -59,7 +60,7 @@ const Cart = ({ history }) => {
             {
                 orderId &&
                 <div className="d-flex flex-column align-items-center justify-content-center mt-5 mb-5">
-                    <img src="../../assets/img/success-.png" alt="success" className="successImg" />
+                    <img src={success} alt="success" className="successImg" />
                     <h3 className="mt-3">¡Muchas gracias por su reserva!</h3>
                     <h5 className="mt-3">Recuerde que debe retirar la persona que figura en la orden.</h5>
                     <p>Su código de orden es {orderId}</p>
